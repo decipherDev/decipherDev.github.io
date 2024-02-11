@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Java Streams Demo | DecipherDev</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1f2229">
+    <link href="//codefence.io/codefence.css" rel="stylesheet">
+    <script defer="" type="text/javascript" src="//codefence.io/codefence.js"></script>
+    <link rel="alternate" type="application/atom+xml" href="https://decipherde.github.io/atom.xml" title="DecipherDev Atom Feed">
+    <link rel="alternate" type="application/json" href="https://decipherde.github.io/rss.xml" title="DecipherDev JSON Feed">
+    <link rel="alternate" type="application/rss+xml" href="https://decipherde.github.io/rss.xml" title="DecipherDev RSS Feed">
+    <meta name="description" content="Demo on java streams">
+    <meta name="author" content="Umesh Toke">
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-title" content="Decipher Dev">
+    <meta name="application-name" content="Decipher Dev">
+    <meta name="msapplication-TileColor" content="#1f2229">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#1f2229">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <meta property="og:title" content="Decipher Dev">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://decipherdev.github.io">
+    <meta property="og:description" content="Read write and execute Code  🐵">
+    <meta property="og:site_name" content="DecipherDev">
+    <link href="https://decipherdev.github.io/java-streams/" rel="canonical" />
+    <link rel="preload" href="/assets/css/0.styles.8d43dff8.css" as="style"><link rel="preload" href="/assets/js/app.a9c9ab62.js" as="script"><link rel="preload" href="/assets/js/4.b9928a34.js" as="script"><link rel="preload" href="/assets/js/2.118d1040.js" as="script"><link rel="preload" href="/assets/js/1.e5e6c905.js" as="script"><link rel="preload" href="/assets/js/18.e7d5f135.js" as="script"><link rel="preload" href="/assets/js/10.f56f3893.js" as="script"><link rel="preload" href="/assets/js/6.ff03715d.js" as="script"><link rel="prefetch" href="/assets/js/11.1ab9f817.js"><link rel="prefetch" href="/assets/js/12.6e743218.js"><link rel="prefetch" href="/assets/js/13.ac4e9af1.js"><link rel="prefetch" href="/assets/js/14.c4a6309c.js"><link rel="prefetch" href="/assets/js/15.c9b15c88.js"><link rel="prefetch" href="/assets/js/16.5389c613.js"><link rel="prefetch" href="/assets/js/17.24dd1f0f.js"><link rel="prefetch" href="/assets/js/19.e0215256.js"><link rel="prefetch" href="/assets/js/20.09039bda.js"><link rel="prefetch" href="/assets/js/21.9a0d4a1f.js"><link rel="prefetch" href="/assets/js/5.b8c46b78.js"><link rel="prefetch" href="/assets/js/7.5fc1accb.js"><link rel="prefetch" href="/assets/js/8.fb4600d0.js"><link rel="prefetch" href="/assets/js/9.67636fee.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8d43dff8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="global-layout"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><vp-icon name="menu" class="icon"></vp-icon> <vp-icon name="cross" class="icon" style="display:none;"></vp-icon></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">DecipherDev</span></a> <div class="links"><nav class="nav-links can-hide"><div class="nav-item"><a href="/posts/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/topics/Java/" class="nav-link">
+  Java-Programming
+</a></div><div class="nav-item"><a href="/topics/LeetCode/" class="nav-link">
+  LeetCode-Solutions
+</a></div> <!----></nav> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/posts/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/topics/Java/" class="nav-link">
+  Java-Programming
+</a></div><div class="nav-item"><a href="/topics/LeetCode/" class="nav-link">
+  LeetCode-Solutions
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Java Streams Demo</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/java-streams/#group-employee-on-the-basis-of-department" class="sidebar-link">Group employee on the basis of department</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/java-streams/#find-the-average-sum-min-max-count" class="sidebar-link">Find the average, sum, min, max, count</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/java-streams/#find-the-frequency-of-the-characters" class="sidebar-link">Find the frequency of the characters</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/java-streams/#find-the-first-non-repeating-character-from-a-string" class="sidebar-link">Find the first non repeating character from a String</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/java-streams/#find-the-duplicates-and-print-them-in-sorted-order" class="sidebar-link">Find the duplicates and print them in sorted order</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/java-streams/#convert-the-list-into-an-array" class="sidebar-link">Convert the list into an Array</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__header"><h1 id="examples-using-java-streams"><a href="#examples-using-java-streams" class="header-anchor">#</a> Examples using Java streams</h1></div> <div class="wrapper post-details-in-post"><div pageKey="v-50c21c03" class="post-details" data-v-652ba438><span class="author" data-v-652ba438> By: Umesh Toke </span> <div class="posted-updated-wrapper" data-v-652ba438><span class="posted-wrapper" data-v-652ba438><span class="bullet" data-v-652ba438>•</span><span class="posted" data-v-652ba438>Posted: Feb 11, 2024</span></span> <!----></div></div></div>  <div class="theme-default-content content__default"><h2 id="group-employee-on-the-basis-of-department"><a href="#group-employee-on-the-basis-of-department" class="header-anchor">#</a> Group employee on the basis of department</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>List.of(new Employee(&quot;Arun&quot;, &quot;Engineering&quot;), 
+        new Employee(&quot;Brijesh&quot;, &quot;Devops&quot;), 
+        new Employee(&quot;Reema&quot;, &quot;HR&quot;))
+     .stream()
+     .collect(Collectors.groupingBy(Employee::department));
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="find-the-average-sum-min-max-count"><a href="#find-the-average-sum-min-max-count" class="header-anchor">#</a> Find the average, sum, min, max, count</h2> <!----> <h2 id="find-the-frequency-of-the-characters"><a href="#find-the-frequency-of-the-characters" class="header-anchor">#</a> Find the frequency of the characters</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>String s = &quot;hello&quot;;
+s.chars()
+ .mapToObj(s -&gt; (char)s)
+ .collect(Collectors.groupingBy(s -&gt; s, Collectors.counting()));
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="find-the-first-non-repeating-character-from-a-string"><a href="#find-the-first-non-repeating-character-from-a-string" class="header-anchor">#</a> Find the first non repeating character from a String</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code> &quot;hello&quot;.chars()
+        .mapToObj(c -&gt; (char)c)
+        .collect(Collectors.groupingBy(c -&gt; c, LinkedHashMap::new, Collectors.counting()))
+        .entrySet()
+        .stream()
+        .filter(e -&gt; e.getValue() == 1)
+        .map(e -&gt; e.getKey())
+        .findFirst()
+        .get();
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="find-the-duplicates-and-print-them-in-sorted-order"><a href="#find-the-duplicates-and-print-them-in-sorted-order" class="header-anchor">#</a> Find the duplicates and print them in sorted order</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>&quot;nonrepeatingword&quot;.chars()
+       .mapToObj(c -&gt; (char) c)
+       .collect(Collectors.groupingBy(Function.identity(), TreeMap::new, Collectors.counting()))
+       .entrySet()
+       .stream()
+       .filter(e -&gt; e.getValue() != 1)
+       .map(e -&gt; e.getKey())
+       .forEach(key -&gt; System.out.print(key+&quot; &quot;));
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="convert-the-list-into-an-array"><a href="#convert-the-list-into-an-array" class="header-anchor">#</a> Convert the list into an Array</h2> <!----></div> <!----> <div class="pagination" data-v-22f8aaae><div data-v-22f8aaae><!----></div> <div data-v-22f8aaae><!----></div></div> <div class="comments-wrapper"><!----></div> </main></div> <footer class="footer" data-v-56abc421><div class="icons" data-v-56abc421><div class="no-wrap-icons" data-v-56abc421><a href="https://github.com/decipherDev" target="_blank" rel="noopener noreferrer" data-v-56abc421><vp-icon name="GitHub" data-v-56abc421></vp-icon></a> <a href="https://www.linkedin.com/in/umeshtoke/" target="_blank" rel="noopener noreferrer" data-v-56abc421><vp-icon name="LinkedIn" data-v-56abc421></vp-icon></a></div></div> <p class="made-by" data-v-56abc421>
+      Copyright © 2024 decipherDev
+    </p></footer></div><div class="global-ui"><!----><VueCustomTooltip></VueCustomTooltip></div></div>
+    <script src="/assets/js/app.a9c9ab62.js" defer></script><script src="/assets/js/4.b9928a34.js" defer></script><script src="/assets/js/2.118d1040.js" defer></script><script src="/assets/js/1.e5e6c905.js" defer></script><script src="/assets/js/18.e7d5f135.js" defer></script><script src="/assets/js/10.f56f3893.js" defer></script><script src="/assets/js/6.ff03715d.js" defer></script>
+  </body>
+</html>
