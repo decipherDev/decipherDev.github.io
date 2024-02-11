@@ -3,7 +3,7 @@
   <id>https://decipherde.github.io/</id>
   <title>DecipherDev</title>
   <subtitle>Let's read, write and execute code ☕</subtitle>
-  <updated>2024-02-11T07:06:34.846Z</updated>
+  <updated>2024-02-11T07:11:56.453Z</updated>
   <generator>vuepress-plugin-feed1</generator>
   <link rel="self" href="https://decipherde.github.io/atom.xml"/>
   <link rel="alternate" href="https://decipherde.github.io/"/>
@@ -17,7 +17,7 @@
     <title type="html">Installing Fast Node Manager (fnm)</title>
     <id>https://decipherde.github.io/installing-fnm/</id>
     <link href="https://decipherde.github.io/installing-fnm/"/>
-    <updated>2024-02-11T07:06:34.862Z</updated>
+    <updated>2024-02-11T07:11:56.469Z</updated>
     <summary type="html">Hey fellow Code Monkeys!!! 🐵 Want to switch between Node versions extremely fast, then check out Installing Fast Node Manager (fnm)! 🍌🐒</summary>
     <content type="html"><![CDATA[<template #header><h1 id="installing-fast-node-manager-fnm"> Installing Fast Node Manager (fnm)</h1>
 </template><h2 id="why-use-fnm"> Why use fnm?</h2>
@@ -247,7 +247,7 @@ compinit
     <title type="html">Installing Node Version Manager (nvm)</title>
     <id>https://decipherde.github.io/installing-nvm/</id>
     <link href="https://decipherde.github.io/installing-nvm/"/>
-    <updated>2024-02-11T07:06:34.872Z</updated>
+    <updated>2024-02-11T07:11:56.479Z</updated>
     <summary type="html">Hey fellow Code Monkeys!!! 🐵 Want to be able to easily install and switch between Node versions, then check out Installing Node Version Manager (nvm)! 🍌🐒</summary>
     <content type="html"><![CDATA[<template #header><h1 id="installing-node-version-manager-nvm"> Installing Node Version Manager (nvm)</h1>
 </template><h2 id="why-use-a-node-version-manager"> Why use a Node Version Manager?</h2>
@@ -602,10 +602,184 @@ compinit
     <rights>Copyright by Umesh Toke</rights>
   </entry>
   <entry>
+    <title type="html">Climbing Stairs Solution 2</title>
+    <id>https://decipherde.github.io/climbing-stairs-solution-2/</id>
+    <link href="https://decipherde.github.io/climbing-stairs-solution-2/"/>
+    <updated>2024-02-11T07:11:56.520Z</updated>
+    <summary type="html">Hey fellow Code Monkeys!!! 🐵 Check out the second Solution &amp; Notes for the LeetCode problem Climbing Stairs! 🍌🐒</summary>
+    <content type="html"><![CDATA[<template #header><h1 id="climbing-stairs-solution-2"> Climbing Stairs Solution 2</h1>
+</template><h2 id="links"> Links</h2>
+<p><a href="https://leetcode.com/problems/climbing-stairs/" target="_blank" rel="noopener noreferrer">Climbing Stairs <div>Problem<span>&nbsp;💡</span></div></a></p>
+<p><a href="https://github.com/codemonkeysio/LeetCode" target="_blank" rel="noopener noreferrer">Get the code & notes on <div>GitHub<span>&nbsp;💻</span></div></a></p>
+<p><a href="https://discord.gg/mh9rQmwJ8H" target="_blank" rel="noopener noreferrer">Ask Questions & Share Solutions in <div>Discord<span>&nbsp;🤖</span></div></a></p>
+<h2 id="problem-description"> Problem Description</h2>
+<p>You are climbing a staircase. It takes <span>n</span> steps to reach the top.</p>
+<p>Each time you can either climb <span>1</span> or <span>2</span> steps. In how many distinct ways can you climb to the top?</p>
+<h2 id="examples"> Examples</h2>
+<p>Ex 1) Input: <span>n = 2</span> <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> Output: <span>2</span></p>
+<p>Explanation: There are <span>two</span> ways to climb to the top.<br>1. 1 step + 1 step<br>2. 2 steps</p>
+<p>Ex 2) Input: <span>n = 3</span> <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> Output: <span>3</span></p>
+<p>Explanation: There are <span>three</span> ways to climb to the top.<br>1. 1 step + 1 step + 1 step<br>2. 1 step + 2 steps<br>3. 2 steps + 1 step</p>
+<h2 id="constraints"> Constraints</h2>
+<ul>
+<li><mjx-container jax="CHTML"><mjx-math><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo space="4"><mjx-c c="2264"></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="4"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="2264"></mjx-c></mjx-mo><mjx-mn space="4"><mjx-c c="4"></mjx-c><mjx-c c="5"></mjx-c></mjx-mn></mjx-math></mjx-container></li>
+</ul>
+<h2 id="thought-process"> Thought Process</h2>
+<ul>
+<li>
+<p>We previously came up with a solution for this problem by using a <span>recursive formula</span> that represents how many distinct ways we can climb the stairs.</p>
+</li>
+<li>
+<p>The issue with the previous solution is it has a <span>time complexity</span> of <span>O(2<sup>n</sup>)</span> which is very inefficient.</p>
+</li>
+<li>
+<p>To come up with a better solution we'll be drawing out multiple <span>recursion trees</span> to help us see a pattern.</p>
+</li>
+<li>
+<p>When <span>n = 1</span> we have:</p>
+</li>
+</ul>
+<Mermaid id="mermaid_382ee1e8" :graph="$dataBlock.mermaid_382ee1e8"></Mermaid><ul>
+<li>
+<p>From the diagram we can see there is <span>1 distinct way</span> to climb to the top when <span>n = 1</span> since we can ignore the scenarios where we take extra steps.</p>
+</li>
+<li>
+<p>When <span>n = 2</span> we have:</p>
+</li>
+</ul>
+<Mermaid id="mermaid_382ee21f" :graph="$dataBlock.mermaid_382ee21f"></Mermaid><ul>
+<li>
+<p>So, we have <span>2 distinct ways</span> to climb to the top.</p>
+</li>
+<li>
+<p>When <span>n = 3</span> we have:</p>
+</li>
+</ul>
+<Mermaid id="mermaid_382ee241" :graph="$dataBlock.mermaid_382ee241"></Mermaid><ul>
+<li>
+<p>So, we have <span>3 distinct ways</span> to climb to the top.</p>
+</li>
+<li>
+<p>When <span>n = 4</span> we have:</p>
+</li>
+</ul>
+<Mermaid id="mermaid_64a570dc" :graph="$dataBlock.mermaid_64a570dc"></Mermaid><ul>
+<li>
+<p>So, we have <span>5 distinct ways</span> to climb to the top.</p>
+</li>
+<li>
+<p>Now, let's take a look at our cases from <span>n = 1</span> to <span>n = 2</span> and see if we can find a pattern:</p>
+</li>
+</ul>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mn><mjx-c c="3"></mjx-c></mjx-mn><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mn><mjx-c c="4"></mjx-c></mjx-mn></mjx-mstyle></mjx-math></mjx-container></p></p>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #33ebeb"><mjx-mi><mjx-c c="w"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mi><mjx-c c="T"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="C"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="b"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mn><mjx-c c="3"></mjx-c></mjx-mn><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mn><mjx-c c="4"></mjx-c></mjx-mn></mjx-mstyle></mjx-math></mjx-container></p></p>
+<ul>
+<li>
+<p>Here, <span>waysToClimb</span> denotes our function for determining how many unique ways we can climb the stairs.</p>
+</li>
+<li>
+<p>This sequence of numbers follows the <span>Fibonacci</span> sequence with the only difference being the value of the <span>1<sup>st</sup></span> and <span>2<sup>nd</sup></span> terms.</p>
+</li>
+<li>
+<p>Here, the <span>1<sup>st</sup></span> term has a value of <span>1</span> and the <span>2<sup>nd</sup></span> term has a value of <span>2</span>.</p>
+</li>
+<li>
+<p>Also, notice that we know we have <span>two ways</span> to climb the stairs to reach the <span>n<sup>th</sup></span> step.</p>
+</li>
+<li>
+<p>If we take <span>1 step</span>, then we're <span>n - 1</span> steps closer to <span>n</span>, and if we take <span>2 steps</span> then we're <span>n - 2</span> steps closer to <span>n</span>.</p>
+</li>
+<li>
+<p>So, we can get the distinct number of ways to climb the steps by summing up the ways of climbing to the <span>n - 1 step</span> and the ways of climbing to the <span>n - 2 step</span> using the following formula:</p>
+</li>
+</ul>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #33ebeb"><mjx-mi><mjx-c c="w"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mi><mjx-c c="T"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="C"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="b"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo><mjx-c c="("></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo><mjx-c c=")"></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mstyle style="color: #33ebeb" space="4"><mjx-mi><mjx-c c="w"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mi><mjx-c c="T"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="C"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="b"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo><mjx-c c="("></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mo space="3"><mjx-c c="2212"></mjx-c></mjx-mo><mjx-mn space="3"><mjx-c c="1"></mjx-c></mjx-mn></mjx-mstyle><mjx-mo><mjx-c c=")"></mjx-c></mjx-mo><mjx-mo space="3"><mjx-c c="+"></mjx-c></mjx-mo><mjx-mstyle style="color: #33ebeb" space="3"><mjx-mi><mjx-c c="w"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mi><mjx-c c="T"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="C"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="b"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo><mjx-c c="("></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mo space="3"><mjx-c c="2212"></mjx-c></mjx-mo><mjx-mn space="3"><mjx-c c="2"></mjx-c></mjx-mn></mjx-mstyle><mjx-mo><mjx-c c=")"></mjx-c></mjx-mo><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mi><mjx-c c="f"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c=">"></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="4"><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn></mjx-mstyle></mjx-math></mjx-container></p></p>
+<ul>
+<li>The <span>Fibonacci</span> sequence is the following series of numbers:</li>
+</ul>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mn><mjx-c c="0"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="2"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="3"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="5"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="8"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="1"></mjx-c><mjx-c c="3"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="2"></mjx-c><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="3"></mjx-c><mjx-c c="4"></mjx-c></mjx-mn><mjx-msub><mjx-mo noIC="true"><mjx-c c=","></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.15em"><mjx-TeXAtom size="s"><mjx-mo><mjx-c c="22EF"></mjx-c></mjx-mo></mjx-TeXAtom></mjx-script></mjx-msub></mjx-mstyle></mjx-math></mjx-container></p></p>
+<ul>
+<li>
+<p>The next number is found by <span>adding up the two numbers before it</span>.</p>
+</li>
+<li>
+<p>For example, <span>5</span> is found by adding <span>2</span> and <span>3</span>.</p>
+</li>
+<li>
+<p>The <span>first two terms</span> are called <span>seed numbers</span>, which we'll denote as:</p>
+</li>
+</ul>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-msub><mjx-mi noIC="true"><mjx-c c="f"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em"><mjx-mn size="s"><mjx-c c="0"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="4"><mjx-mn><mjx-c c="0"></mjx-c></mjx-mn></mjx-mstyle><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="2"><mjx-msub><mjx-mi noIC="true"><mjx-c c="f"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em"><mjx-mn size="s"><mjx-c c="1"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="4"><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn></mjx-mstyle></mjx-math></mjx-container></p></p>
+<ul>
+<li>Here's the formula used to characterize the sequence:</li>
+</ul>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-msub><mjx-mi noIC="true"><mjx-c c="f"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em"><mjx-mi size="s"><mjx-c c="n"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="4"><mjx-msub><mjx-mi noIC="true"><mjx-c c="f"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em"><mjx-TeXAtom size="s"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mo><mjx-c c="2212"></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub></mjx-mstyle><mjx-mo space="3"><mjx-c c="+"></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="3"><mjx-msub><mjx-mi noIC="true"><mjx-c c="f"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em"><mjx-TeXAtom size="s"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mo><mjx-c c="2212"></mjx-c></mjx-mo><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mi><mjx-c c="f"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c=">"></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="4"><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn></mjx-mstyle></mjx-math></mjx-container></p></p>
+<ul>
+<li>The <span>seed numbers</span> for our problem are:</li>
+</ul>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #33ebeb"><mjx-mi><mjx-c c="w"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mi><mjx-c c="T"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="C"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-msub><mjx-mi noIC="true"><mjx-c c="b"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em"><mjx-mn size="s"><mjx-c c="1"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mstyle style="color: #33ebeb" space="4"><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn></mjx-mstyle><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mstyle style="color: #33ebeb" space="2"><mjx-mi><mjx-c c="w"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mi><mjx-c c="T"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="C"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-msub><mjx-mi noIC="true"><mjx-c c="b"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em"><mjx-mn size="s"><mjx-c c="2"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mstyle style="color: #33ebeb" space="4"><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn></mjx-mstyle></mjx-math></mjx-container></p></p>
+<ul>
+<li>
+<p>Now that we know our pattern of climbing the stairs follows a <span>Fibonnaci</span> sequence we can implement the sequence in our code using the <span>waysToClimb</span> formula and the <span>seed numbers</span> we came up with.</p>
+</li>
+<li>
+<p>This will improve the <span>time complexity</span> of our solution from the <span>O(2<sup>n</sup>)</span> solution we previously came up with.</p>
+</li>
+</ul>
+<h2 id="implementation"> Implementation</h2>
+<code-fence lang="js" heading="Climbing Stairs Solution 2">
+<pre vue-slot="code">
+var climbStairs = function(n) {
+  if (n === 1) {
+    return 1;
+  } else if (n === 2) {
+    return 2;
+  } else {
+    let waysToClimb1 = 1;
+    let waysToClimb2 = 2;
+    let waysToClimb;
+    let i = 1;
+
+    while (n - 1 > i) {
+      waysToClimb = waysToClimb2 + waysToClimb1;
+      waysToClimb1 = waysToClimb2;
+      waysToClimb2 = waysToClimb;
+      i++;
+    }
+
+    return waysToClimb;
+  }
+};
+
+let n = 4;
+console.log(climbStairs(n));
+
+</pre>
+</code-fence>
+<h2 id="analysis"> Analysis</h2>
+<ul>
+<li>
+<p>Since we're looping over the length of <span>n - 1</span> our <span>time complexity</span> is <span>O(n)</span> which is a much more efficient solution!</p>
+</li>
+<li>
+<p>See if you can come up with an even more efficient solution using more properties of the <span>Fibonnaci</span> sequence!</p>
+</li>
+</ul>
+]]></content>
+    <author>
+      <name>Umesh Toke</name>
+    </author>
+    <contributor>
+      <name>Umesh Toke</name>
+    </contributor>
+    <published>2021-07-01T15:45:32.000Z</published>
+    <rights>Copyright by Umesh Toke</rights>
+  </entry>
+  <entry>
     <title type="html">Installing Yarn 1</title>
     <id>https://decipherde.github.io/installing-yarn-1/</id>
     <link href="https://decipherde.github.io/installing-yarn-1/"/>
-    <updated>2024-02-11T07:06:34.881Z</updated>
+    <updated>2024-02-11T07:11:56.528Z</updated>
     <summary type="html">Hey fellow Code Monkeys!!! 🐵 Want to learn how to install and use Yarn 1, then check out this post! 🍌🐒</summary>
     <content type="html"><![CDATA[<template #header><h1 id="installing-yarn-1"> Installing Yarn 1</h1>
 </template><h2 id="what-is-a-package-manager"> What is a Package Manager?</h2>
@@ -1091,374 +1265,10 @@ Done <span>in</span> <span>34</span>.11s.
     <rights>Copyright by Umesh Toke</rights>
   </entry>
   <entry>
-    <title type="html">Climbing Stairs Solution 2</title>
-    <id>https://decipherde.github.io/climbing-stairs-solution-2/</id>
-    <link href="https://decipherde.github.io/climbing-stairs-solution-2/"/>
-    <updated>2024-02-11T07:06:34.925Z</updated>
-    <summary type="html">Hey fellow Code Monkeys!!! 🐵 Check out the second Solution &amp; Notes for the LeetCode problem Climbing Stairs! 🍌🐒</summary>
-    <content type="html"><![CDATA[<template #header><h1 id="climbing-stairs-solution-2"> Climbing Stairs Solution 2</h1>
-</template><h2 id="links"> Links</h2>
-<p><a href="https://leetcode.com/problems/climbing-stairs/" target="_blank" rel="noopener noreferrer">Climbing Stairs <div>Problem<span>&nbsp;💡</span></div></a></p>
-<p><a href="https://github.com/codemonkeysio/LeetCode" target="_blank" rel="noopener noreferrer">Get the code & notes on <div>GitHub<span>&nbsp;💻</span></div></a></p>
-<p><a href="https://discord.gg/mh9rQmwJ8H" target="_blank" rel="noopener noreferrer">Ask Questions & Share Solutions in <div>Discord<span>&nbsp;🤖</span></div></a></p>
-<h2 id="problem-description"> Problem Description</h2>
-<p>You are climbing a staircase. It takes <span>n</span> steps to reach the top.</p>
-<p>Each time you can either climb <span>1</span> or <span>2</span> steps. In how many distinct ways can you climb to the top?</p>
-<h2 id="examples"> Examples</h2>
-<p>Ex 1) Input: <span>n = 2</span> <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> Output: <span>2</span></p>
-<p>Explanation: There are <span>two</span> ways to climb to the top.<br>1. 1 step + 1 step<br>2. 2 steps</p>
-<p>Ex 2) Input: <span>n = 3</span> <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> Output: <span>3</span></p>
-<p>Explanation: There are <span>three</span> ways to climb to the top.<br>1. 1 step + 1 step + 1 step<br>2. 1 step + 2 steps<br>3. 2 steps + 1 step</p>
-<h2 id="constraints"> Constraints</h2>
-<ul>
-<li><mjx-container jax="CHTML"><mjx-math><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo space="4"><mjx-c c="2264"></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="4"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="2264"></mjx-c></mjx-mo><mjx-mn space="4"><mjx-c c="4"></mjx-c><mjx-c c="5"></mjx-c></mjx-mn></mjx-math></mjx-container></li>
-</ul>
-<h2 id="thought-process"> Thought Process</h2>
-<ul>
-<li>
-<p>We previously came up with a solution for this problem by using a <span>recursive formula</span> that represents how many distinct ways we can climb the stairs.</p>
-</li>
-<li>
-<p>The issue with the previous solution is it has a <span>time complexity</span> of <span>O(2<sup>n</sup>)</span> which is very inefficient.</p>
-</li>
-<li>
-<p>To come up with a better solution we'll be drawing out multiple <span>recursion trees</span> to help us see a pattern.</p>
-</li>
-<li>
-<p>When <span>n = 1</span> we have:</p>
-</li>
-</ul>
-<Mermaid id="mermaid_382ee1e8" :graph="$dataBlock.mermaid_382ee1e8"></Mermaid><ul>
-<li>
-<p>From the diagram we can see there is <span>1 distinct way</span> to climb to the top when <span>n = 1</span> since we can ignore the scenarios where we take extra steps.</p>
-</li>
-<li>
-<p>When <span>n = 2</span> we have:</p>
-</li>
-</ul>
-<Mermaid id="mermaid_382ee21f" :graph="$dataBlock.mermaid_382ee21f"></Mermaid><ul>
-<li>
-<p>So, we have <span>2 distinct ways</span> to climb to the top.</p>
-</li>
-<li>
-<p>When <span>n = 3</span> we have:</p>
-</li>
-</ul>
-<Mermaid id="mermaid_382ee241" :graph="$dataBlock.mermaid_382ee241"></Mermaid><ul>
-<li>
-<p>So, we have <span>3 distinct ways</span> to climb to the top.</p>
-</li>
-<li>
-<p>When <span>n = 4</span> we have:</p>
-</li>
-</ul>
-<Mermaid id="mermaid_64a570dc" :graph="$dataBlock.mermaid_64a570dc"></Mermaid><ul>
-<li>
-<p>So, we have <span>5 distinct ways</span> to climb to the top.</p>
-</li>
-<li>
-<p>Now, let's take a look at our cases from <span>n = 1</span> to <span>n = 2</span> and see if we can find a pattern:</p>
-</li>
-</ul>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mn><mjx-c c="3"></mjx-c></mjx-mn><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mn><mjx-c c="4"></mjx-c></mjx-mn></mjx-mstyle></mjx-math></mjx-container></p></p>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #33ebeb"><mjx-mi><mjx-c c="w"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mi><mjx-c c="T"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="C"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="b"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mn><mjx-c c="3"></mjx-c></mjx-mn><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mn><mjx-c c="4"></mjx-c></mjx-mn></mjx-mstyle></mjx-math></mjx-container></p></p>
-<ul>
-<li>
-<p>Here, <span>waysToClimb</span> denotes our function for determining how many unique ways we can climb the stairs.</p>
-</li>
-<li>
-<p>This sequence of numbers follows the <span>Fibonacci</span> sequence with the only difference being the value of the <span>1<sup>st</sup></span> and <span>2<sup>nd</sup></span> terms.</p>
-</li>
-<li>
-<p>Here, the <span>1<sup>st</sup></span> term has a value of <span>1</span> and the <span>2<sup>nd</sup></span> term has a value of <span>2</span>.</p>
-</li>
-<li>
-<p>Also, notice that we know we have <span>two ways</span> to climb the stairs to reach the <span>n<sup>th</sup></span> step.</p>
-</li>
-<li>
-<p>If we take <span>1 step</span>, then we're <span>n - 1</span> steps closer to <span>n</span>, and if we take <span>2 steps</span> then we're <span>n - 2</span> steps closer to <span>n</span>.</p>
-</li>
-<li>
-<p>So, we can get the distinct number of ways to climb the steps by summing up the ways of climbing to the <span>n - 1 step</span> and the ways of climbing to the <span>n - 2 step</span> using the following formula:</p>
-</li>
-</ul>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #33ebeb"><mjx-mi><mjx-c c="w"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mi><mjx-c c="T"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="C"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="b"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo><mjx-c c="("></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo><mjx-c c=")"></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mstyle style="color: #33ebeb" space="4"><mjx-mi><mjx-c c="w"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mi><mjx-c c="T"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="C"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="b"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo><mjx-c c="("></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mo space="3"><mjx-c c="2212"></mjx-c></mjx-mo><mjx-mn space="3"><mjx-c c="1"></mjx-c></mjx-mn></mjx-mstyle><mjx-mo><mjx-c c=")"></mjx-c></mjx-mo><mjx-mo space="3"><mjx-c c="+"></mjx-c></mjx-mo><mjx-mstyle style="color: #33ebeb" space="3"><mjx-mi><mjx-c c="w"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mi><mjx-c c="T"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="C"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="b"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo><mjx-c c="("></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mo space="3"><mjx-c c="2212"></mjx-c></mjx-mo><mjx-mn space="3"><mjx-c c="2"></mjx-c></mjx-mn></mjx-mstyle><mjx-mo><mjx-c c=")"></mjx-c></mjx-mo><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mi><mjx-c c="f"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c=">"></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="4"><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn></mjx-mstyle></mjx-math></mjx-container></p></p>
-<ul>
-<li>The <span>Fibonacci</span> sequence is the following series of numbers:</li>
-</ul>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mn><mjx-c c="0"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="2"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="3"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="5"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="8"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="1"></mjx-c><mjx-c c="3"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="2"></mjx-c><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="3"></mjx-c><mjx-c c="4"></mjx-c></mjx-mn><mjx-msub><mjx-mo noIC="true"><mjx-c c=","></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.15em"><mjx-TeXAtom size="s"><mjx-mo><mjx-c c="22EF"></mjx-c></mjx-mo></mjx-TeXAtom></mjx-script></mjx-msub></mjx-mstyle></mjx-math></mjx-container></p></p>
-<ul>
-<li>
-<p>The next number is found by <span>adding up the two numbers before it</span>.</p>
-</li>
-<li>
-<p>For example, <span>5</span> is found by adding <span>2</span> and <span>3</span>.</p>
-</li>
-<li>
-<p>The <span>first two terms</span> are called <span>seed numbers</span>, which we'll denote as:</p>
-</li>
-</ul>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-msub><mjx-mi noIC="true"><mjx-c c="f"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em"><mjx-mn size="s"><mjx-c c="0"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="4"><mjx-mn><mjx-c c="0"></mjx-c></mjx-mn></mjx-mstyle><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="2"><mjx-msub><mjx-mi noIC="true"><mjx-c c="f"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em"><mjx-mn size="s"><mjx-c c="1"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="4"><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn></mjx-mstyle></mjx-math></mjx-container></p></p>
-<ul>
-<li>Here's the formula used to characterize the sequence:</li>
-</ul>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-msub><mjx-mi noIC="true"><mjx-c c="f"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em"><mjx-mi size="s"><mjx-c c="n"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="4"><mjx-msub><mjx-mi noIC="true"><mjx-c c="f"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em"><mjx-TeXAtom size="s"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mo><mjx-c c="2212"></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub></mjx-mstyle><mjx-mo space="3"><mjx-c c="+"></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="3"><mjx-msub><mjx-mi noIC="true"><mjx-c c="f"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em"><mjx-TeXAtom size="s"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mo><mjx-c c="2212"></mjx-c></mjx-mo><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mi><mjx-c c="f"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c=">"></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="4"><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn></mjx-mstyle></mjx-math></mjx-container></p></p>
-<ul>
-<li>The <span>seed numbers</span> for our problem are:</li>
-</ul>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #33ebeb"><mjx-mi><mjx-c c="w"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mi><mjx-c c="T"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="C"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-msub><mjx-mi noIC="true"><mjx-c c="b"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em"><mjx-mn size="s"><mjx-c c="1"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mstyle style="color: #33ebeb" space="4"><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn></mjx-mstyle><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mstyle style="color: #33ebeb" space="2"><mjx-mi><mjx-c c="w"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mi><mjx-c c="T"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="C"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-msub><mjx-mi noIC="true"><mjx-c c="b"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em"><mjx-mn size="s"><mjx-c c="2"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mstyle style="color: #33ebeb" space="4"><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn></mjx-mstyle></mjx-math></mjx-container></p></p>
-<ul>
-<li>
-<p>Now that we know our pattern of climbing the stairs follows a <span>Fibonnaci</span> sequence we can implement the sequence in our code using the <span>waysToClimb</span> formula and the <span>seed numbers</span> we came up with.</p>
-</li>
-<li>
-<p>This will improve the <span>time complexity</span> of our solution from the <span>O(2<sup>n</sup>)</span> solution we previously came up with.</p>
-</li>
-</ul>
-<h2 id="implementation"> Implementation</h2>
-<code-fence lang="js" heading="Climbing Stairs Solution 2">
-<pre vue-slot="code">
-var climbStairs = function(n) {
-  if (n === 1) {
-    return 1;
-  } else if (n === 2) {
-    return 2;
-  } else {
-    let waysToClimb1 = 1;
-    let waysToClimb2 = 2;
-    let waysToClimb;
-    let i = 1;
-
-    while (n - 1 > i) {
-      waysToClimb = waysToClimb2 + waysToClimb1;
-      waysToClimb1 = waysToClimb2;
-      waysToClimb2 = waysToClimb;
-      i++;
-    }
-
-    return waysToClimb;
-  }
-};
-
-let n = 4;
-console.log(climbStairs(n));
-
-</pre>
-</code-fence>
-<h2 id="analysis"> Analysis</h2>
-<ul>
-<li>
-<p>Since we're looping over the length of <span>n - 1</span> our <span>time complexity</span> is <span>O(n)</span> which is a much more efficient solution!</p>
-</li>
-<li>
-<p>See if you can come up with an even more efficient solution using more properties of the <span>Fibonnaci</span> sequence!</p>
-</li>
-</ul>
-]]></content>
-    <author>
-      <name>Umesh Toke</name>
-    </author>
-    <contributor>
-      <name>Umesh Toke</name>
-    </contributor>
-    <published>2021-07-01T15:45:32.000Z</published>
-    <rights>Copyright by Umesh Toke</rights>
-  </entry>
-  <entry>
-    <title type="html">Contains Duplicate</title>
-    <id>https://decipherde.github.io/contains-duplicate/</id>
-    <link href="https://decipherde.github.io/contains-duplicate/"/>
-    <updated>2024-02-11T07:06:34.987Z</updated>
-    <summary type="html">Hey fellow Code Monkeys!!! 🐵 Check out the Solution &amp; Notes for the LeetCode problem Contains Duplicate! 🍌🐒</summary>
-    <content type="html"><![CDATA[<template #header><h1 id="contains-duplicate"> Contains Duplicate</h1>
-</template><h2 id="links"> Links</h2>
-<p><a href="https://leetcode.com/problems/contains-duplicate/" target="_blank" rel="noopener noreferrer">Contains Duplicate <div>Problem<span>&nbsp;💡</span></div></a></p>
-<p><a href="https://github.com/codemonkeysio/LeetCode" target="_blank" rel="noopener noreferrer">Get the code & notes on <div>GitHub<span>&nbsp;💻</span></div></a></p>
-<p><a href="https://discord.gg/mh9rQmwJ8H" target="_blank" rel="noopener noreferrer">Ask Questions & Share Solutions in <div>Discord<span>&nbsp;🤖</span></div></a></p>
-<h2 id="problem-description"> Problem Description</h2>
-<p>Given an <span>integer</span> array <span>nums</span>, return <span>true</span> if any value appears <span>at least twice</span>, and return <span>false</span> if every element is distinct.</p>
-<h2 id="examples"> Examples</h2>
-<p>Ex 1) Input: <span>nums</span> = [1, 2, 3, 1] <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> Output: <span>true</span> since 1 appears twice.</p>
-<p>Ex 2) Input: <span>nums</span> = [1, 2, 3, 4] <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> Output: <span>false</span> since no value appears twice.</p>
-<p>Ex 3) Input: <span>nums</span> = [1, 1, 1, 3, 3, 4, 3, 2, 4, 2] <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> Output: <span>true</span> since 1, 3, and 2 appear more than once.</p>
-<p>Ex 4) Input: <span>nums</span> = [] <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> Output: <span>false</span> since there are no values.</p>
-<h2 id="constraints"> Constraints</h2>
-<p><mjx-container jax="CHTML"><mjx-math><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo space="4"><mjx-c c="2264"></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="4"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="."></mjx-c></mjx-mo><mjx-mi space="2"><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="g"></mjx-c></mjx-mi><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="h"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="2264"></mjx-c></mjx-mo><mjx-msup><mjx-mn><mjx-c c="1"></mjx-c><mjx-c c="0"></mjx-c></mjx-mn><mjx-script style="vertical-align: 0.393em"><mjx-mn size="s"><mjx-c c="5"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math></mjx-container></p>
-<p><mjx-container jax="CHTML"><mjx-math><mjx-mo><mjx-c c="2212"></mjx-c></mjx-mo><mjx-msup><mjx-mn><mjx-c c="1"></mjx-c><mjx-c c="0"></mjx-c></mjx-mn><mjx-script style="vertical-align: 0.393em"><mjx-mn size="s"><mjx-c c="9"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo><mjx-c c="2264"></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="4"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mo space="4"><mjx-c c="2264"></mjx-c></mjx-mo><mjx-msup><mjx-mn><mjx-c c="1"></mjx-c><mjx-c c="0"></mjx-c></mjx-mn><mjx-script style="vertical-align: 0.393em"><mjx-mn size="s"><mjx-c c="9"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math></mjx-container></p>
-<h2 id="thought-process"> Thought Process</h2>
-<ul>
-<li>
-<p>By looking at the examples, the 1<sup>st</sup> thought that comes to mind may be to simply take each value in <span>nums</span>, and compare it with every other value.</p>
-<ul>
-<li>
-<p>Basically, we'll be comparing each pair of values in <span>nums</span> to see if a duplicate has occurred.</p>
-</li>
-<li>
-<p>To do this we'll start at the <span>first</span> value in <span>nums</span>, and compare it with each value to the right until we reach the end of <span>nums</span>.</p>
-</li>
-<li>
-<p>Then we'll take the <span>second</span> value in nums, and compare it with each value to the right until we reach the end of <span>nums</span>.</p>
-</li>
-<li>
-<p>We repeat this process until we reach the end of <span>nums</span> in the worst case or until we find a duplicate value.</p>
-</li>
-<li>
-<p>Here's a visualization for <span>nums</span> = [1, 2, 3] which represents a worst case scenario:</p>
-<ul>
-<li>
-<p>Let's take our 1<sup>st</sup> value in <span>nums</span>, and compare it with each value to the right of it:</p>
-<ul>
-<li><span>1<sup>st</sup> Comparison:</span></li>
-</ul>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="["></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.184em; padding-left: 0.073em"><mjx-mstyle size="s" style="color: #33eb61"><mjx-mn><mjx-c c="0"></mjx-c></mjx-mn></mjx-mstyle></mjx-over><mjx-base><mjx-mstyle style="color: #33eb61"><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn></mjx-mstyle></mjx-base></mjx-mover><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.2em; padding-left: 0.073em"><mjx-mstyle size="s" style="color: #33ebeb"><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn></mjx-mstyle></mjx-over><mjx-base><mjx-mstyle style="color: #33ebeb"><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn></mjx-mstyle></mjx-base></mjx-mover><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.2em; padding-left: 0.073em"><mjx-mn size="s"><mjx-c c="2"></mjx-c></mjx-mn></mjx-over><mjx-base><mjx-mn><mjx-c c="3"></mjx-c></mjx-mn></mjx-base></mjx-mover><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-math></mjx-container></p></p>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #33eb61"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="0"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mo space="4"><mjx-c c="2260"></mjx-c></mjx-mo><mjx-mstyle style="color: #33ebeb" space="4"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mi><mjx-c c="N"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="d"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="p"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="c"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="f"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="d"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math></mjx-container></p></p>
-<ul>
-<li><span>2<sup>nd</sup> Comparison:</span></li>
-</ul>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="["></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.184em; padding-left: 0.073em"><mjx-mstyle size="s" style="color: #33eb61"><mjx-mn><mjx-c c="0"></mjx-c></mjx-mn></mjx-mstyle></mjx-over><mjx-base><mjx-mstyle style="color: #33eb61"><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn></mjx-mstyle></mjx-base></mjx-mover><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.2em; padding-left: 0.073em"><mjx-mn size="s"><mjx-c c="1"></mjx-c></mjx-mn></mjx-over><mjx-base><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn></mjx-base></mjx-mover><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.2em; padding-left: 0.073em"><mjx-mstyle size="s" style="color: #cc99ff"><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn></mjx-mstyle></mjx-over><mjx-base><mjx-mstyle style="color: #cc99ff"><mjx-mn><mjx-c c="3"></mjx-c></mjx-mn></mjx-mstyle></mjx-base></mjx-mover><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-math></mjx-container></p></p>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #33eb61"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="0"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mo space="4"><mjx-c c="2260"></mjx-c></mjx-mo><mjx-mstyle style="color: #cc99ff" space="4"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mi><mjx-c c="N"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="d"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="p"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="c"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="f"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="d"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math></mjx-container></p></p>
-</li>
-<li>
-<p>Now, let's take our 2<sup>nd</sup> value in <span>nums</span>, and compare it with each value to the right of it:</p>
-<ul>
-<li><span>3<sup>rd</sup> Comparison:</span></li>
-</ul>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="["></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.184em; padding-left: 0.073em"><mjx-mn size="s"><mjx-c c="0"></mjx-c></mjx-mn></mjx-over><mjx-base><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn></mjx-base></mjx-mover><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.2em; padding-left: 0.073em"><mjx-mstyle size="s" style="color: #33ebeb"><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn></mjx-mstyle></mjx-over><mjx-base><mjx-mstyle style="color: #33ebeb"><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn></mjx-mstyle></mjx-base></mjx-mover><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.2em; padding-left: 0.073em"><mjx-mstyle size="s" style="color: #cc99ff"><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn></mjx-mstyle></mjx-over><mjx-base><mjx-mstyle style="color: #cc99ff"><mjx-mn><mjx-c c="3"></mjx-c></mjx-mn></mjx-mstyle></mjx-base></mjx-mover><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-math></mjx-container></p></p>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #33ebeb"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mo space="4"><mjx-c c="2260"></mjx-c></mjx-mo><mjx-mstyle style="color: #cc99ff" space="4"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mi><mjx-c c="N"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="d"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="p"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="c"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="f"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="d"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math></mjx-container></p></p>
-<ul>
-<li>The 3<sup>rd</sup> value in <span>nums</span> is also the last value, so there's no more comparisons to be made.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>To achieve this we'll need to loop over each value in <span>nums</span>, and for each iteration of this loop we need to compare our current value which will denote as <span>nums[i]</span> with each value to the right of it.</p>
-</li>
-<li>
-<p>The process of comparing <span>nums[i]</span> with each value to the right of it means we'll need a nested for loop that loops from <span>nums[i + 1]</span> to the last value in <span>nums</span>.</p>
-</li>
-<li>
-<p>A nested for loop <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> a time complexity of <mjx-container jax="CHTML"><mjx-math><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="O"></mjx-c></mjx-mi><mjx-mo><mjx-c c="("></mjx-c></mjx-mo><mjx-msup><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em"><mjx-mn size="s"><mjx-c c="2"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo><mjx-c c=")"></mjx-c></mjx-mo></mjx-mstyle></mjx-math></mjx-container> which is not efficient and will result in a Time Limit Exceeded error on LeetCode.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Before checking for duplicate values, we can realize that if we <span>sort nums</span> any duplicate values will be consecutive.</p>
-<ul>
-<li>
-<p>Let's visualize this with an example for <span>nums</span> = [1, 2, 3, 1]:</p>
-<ul>
-<li>
-<p>Sorting <span>nums</span> gives us:</p>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi><mjx-mo><mjx-c c="("></mjx-c></mjx-mo><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c=")"></mjx-c></mjx-mo></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="2"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="3"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-math></mjx-container></p></p>
-</li>
-<li>
-<p>Now, we can loop over <span>nums</span> and check for duplicates values.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Looping over <span>nums</span> has a time complexity of <span>O(n)</span>, and the sorting algorithm can have a time complexity as good as <span>O(nlogn)</span> if something like heapsort is used.</p>
-</li>
-<li>
-<p>So, the overall time complexity is <span>O(nlogn)</span> since it's the dominating factor.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Solving this problem requires the ability to efficiently search for values, and a great way to do that is to use a <span>hash table</span>.</p>
-<ul>
-<li>
-<p>A <span>hash table</span> is an object that maps keys to values.</p>
-</li>
-<li>
-<p>The search and insert opertions in a hash table have a time complexity of <span>O(1)</span>.</p>
-</li>
-<li>
-<p>Using a <span>hash table</span> will allow us to store each value in <span>nums</span> as a key, and we can map a value of let's say <span>true</span> to it if it's the first time we've seen the value.</p>
-</li>
-<li>
-<p>Now, to create our <span>hash table</span> we can loop over <span>nums</span> then check to see if the key is present.</p>
-</li>
-<li>
-<p>If the key is present, then we have found a duplicate, and we'll return true.</p>
-</li>
-<li>
-<p>If the key isn't present, then we'll store the current value of <span>nums</span> as a key in our <span>hash table</span> with a value of <span>true</span>.</p>
-</li>
-<li>
-<p>If no key appears twice, then <span>nums</span> has no duplicates, and we'll return false.</p>
-</li>
-<li>
-<p>Here's a visualization of creating our <span>hash table</span> which we'll denote as <span>obj</span> for <span>nums</span> = [1, 2, 1]:</p>
-<ul>
-<li><span>1<sup>st</sup> Iteration:</span></li>
-</ul>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #33eb61"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="0"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mn space="4"><mjx-c c="1"></mjx-c></mjx-mn></mjx-math></mjx-container></p></p>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="b"></mjx-c></mjx-mi><mjx-mi><mjx-c c="j"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="{"></mjx-c></mjx-mo><mjx-mo><mjx-c c="}"></mjx-c></mjx-mo><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle style="color: #33eb61"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="0"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="k"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math></mjx-container></p></p>
-<ul>
-<li>
-<p>So, we'll store the value of <span>nums[0]</span> as a key in our <span>hash table</span> with a value of true.</p>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="b"></mjx-c></mjx-mi><mjx-mi><mjx-c c="j"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="{"></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo space="4"><mjx-c c=":"></mjx-c></mjx-mo><mjx-mi space="4"><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mo><mjx-c c="}"></mjx-c></mjx-mo></mjx-math></mjx-container></p></p>
-</li>
-<li>
-<p><span>2<sup>nd</sup> Iteration:</span></p>
-</li>
-</ul>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #33ebeb"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mn space="4"><mjx-c c="2"></mjx-c></mjx-mn></mjx-math></mjx-container></p></p>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="b"></mjx-c></mjx-mi><mjx-mi><mjx-c c="j"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="{"></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo space="4"><mjx-c c=":"></mjx-c></mjx-mo><mjx-mi space="4"><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mo><mjx-c c="}"></mjx-c></mjx-mo><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle style="color: #33ebeb"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="k"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math></mjx-container></p></p>
-<ul>
-<li>
-<p>So, we'll store the value of <span>nums[1]</span> as a key in our <span>hash table</span> with a value of true.</p>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="b"></mjx-c></mjx-mi><mjx-mi><mjx-c c="j"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="{"></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo space="4"><mjx-c c=":"></mjx-c></mjx-mo><mjx-mi space="4"><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="2"></mjx-c></mjx-mn><mjx-mo space="4"><mjx-c c=":"></mjx-c></mjx-mo><mjx-mi space="4"><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mo><mjx-c c="}"></mjx-c></mjx-mo></mjx-math></mjx-container></p></p>
-</li>
-<li>
-<p><span>3<sup>rd</sup> Iteration:</span></p>
-</li>
-</ul>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #cc99ff"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mn space="4"><mjx-c c="1"></mjx-c></mjx-mn></mjx-math></mjx-container></p></p>
-<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="b"></mjx-c></mjx-mi><mjx-mi><mjx-c c="j"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="{"></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo space="4"><mjx-c c=":"></mjx-c></mjx-mo><mjx-mi space="4"><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="2"></mjx-c></mjx-mn><mjx-mo space="4"><mjx-c c=":"></mjx-c></mjx-mo><mjx-mi space="4"><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mo><mjx-c c="}"></mjx-c></mjx-mo><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle style="color: #cc99ff"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="d"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="k"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math></mjx-container></p></p>
-<ul>
-<li>Since the same key appeared in our <span>hash table</span>, a duplicate has been found in <span>nums</span>, so we'll return false.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="implementation"> Implementation</h2>
-<code-fence lang="js" heading="Contains Duplicate">
-<pre vue-slot="code">
-var containsDuplicate = function(nums) {
-  const obj = {};
-  for (let i = 0; i < nums.length; i++) {
-    if (obj[nums[i]]) {
-      return true;
-    }
-    obj[nums[i]] = true;
-  }
-
-  return false;
-};
-
-nums = [1, 2, 3, 1];
-console.log(containsDuplicate(nums));
-</pre>
-</code-fence>
-]]></content>
-    <author>
-      <name>Umesh Toke</name>
-    </author>
-    <contributor>
-      <name>Umesh Toke</name>
-    </contributor>
-    <published>2021-08-06T18:24:00.000Z</published>
-    <rights>Copyright by Umesh Toke</rights>
-  </entry>
-  <entry>
     <title type="html">Climbing Stairs Solution 1</title>
     <id>https://decipherde.github.io/climbing-stairs-solution-1/</id>
     <link href="https://decipherde.github.io/climbing-stairs-solution-1/"/>
-    <updated>2024-02-11T07:06:35.018Z</updated>
+    <updated>2024-02-11T07:11:56.568Z</updated>
     <summary type="html">Hey fellow Code Monkeys!!! 🐵 Check out the first Solution &amp; Notes for the LeetCode problem Climbing Stairs! 🍌🐒</summary>
     <content type="html"><![CDATA[<template #header><h1 id="climbing-stairs-solution-1"> Climbing Stairs Solution 1</h1>
 </template><h2 id="links"> Links</h2>
@@ -1603,7 +1413,7 @@ console.log(climbStairs(n));
     <title type="html">Remove Duplicates from Sorted Array</title>
     <id>https://decipherde.github.io/remove-duplicates-from-sorted-array/</id>
     <link href="https://decipherde.github.io/remove-duplicates-from-sorted-array/"/>
-    <updated>2024-02-11T07:06:35.093Z</updated>
+    <updated>2024-02-11T07:11:56.633Z</updated>
     <summary type="html">Hey fellow Code Monkeys!!! 🐵 Check out the Solution &amp; Notes for the LeetCode problem Remove Duplicates from Sorted Array! 🍌🐒</summary>
     <content type="html"><![CDATA[<template #header><h1 id="remove-duplicates-from-sorted-array"> Remove Duplicates from Sorted Array</h1>
 </template><h2 id="links"> Links</h2>
@@ -1785,7 +1595,7 @@ console.log('k =', removeDuplicates(nums), 'nums =', nums);
     <title type="html">Reverse String</title>
     <id>https://decipherde.github.io/reverse-string/</id>
     <link href="https://decipherde.github.io/reverse-string/"/>
-    <updated>2024-02-11T07:06:35.156Z</updated>
+    <updated>2024-02-11T07:11:56.703Z</updated>
     <summary type="html">Hey fellow Code Monkeys!!! 🐵 Check out the Solution &amp; Notes for the LeetCode problem Reverse String! 🍌🐒</summary>
     <content type="html"><![CDATA[<template #header><h1 id="reverse-string"> Reverse String</h1>
 </template><h2 id="links"> Links</h2>
@@ -2083,125 +1893,183 @@ console.log(s);
     <rights>Copyright by Umesh Toke</rights>
   </entry>
   <entry>
-    <title type="html">Valid Anagram</title>
-    <id>https://decipherde.github.io/valid-anagram/</id>
-    <link href="https://decipherde.github.io/valid-anagram/"/>
-    <updated>2024-02-11T07:06:35.160Z</updated>
-    <summary type="html">Hey fellow Code Monkeys!!! 🐵 Check out the Solution &amp; Notes for the LeetCode problem Valid Anagram! 🍌🐒</summary>
-    <content type="html"><![CDATA[<template #header><h1 id="valid-anagram"> Valid Anagram</h1>
+    <title type="html">Contains Duplicate</title>
+    <id>https://decipherde.github.io/contains-duplicate/</id>
+    <link href="https://decipherde.github.io/contains-duplicate/"/>
+    <updated>2024-02-11T07:11:56.763Z</updated>
+    <summary type="html">Hey fellow Code Monkeys!!! 🐵 Check out the Solution &amp; Notes for the LeetCode problem Contains Duplicate! 🍌🐒</summary>
+    <content type="html"><![CDATA[<template #header><h1 id="contains-duplicate"> Contains Duplicate</h1>
 </template><h2 id="links"> Links</h2>
-<p><a href="https://leetcode.com/problems/valid-anagram/" target="_blank" rel="noopener noreferrer">Valid Anagram <div>Problem<span>&nbsp;💡</span></div></a></p>
+<p><a href="https://leetcode.com/problems/contains-duplicate/" target="_blank" rel="noopener noreferrer">Contains Duplicate <div>Problem<span>&nbsp;💡</span></div></a></p>
 <p><a href="https://github.com/codemonkeysio/LeetCode" target="_blank" rel="noopener noreferrer">Get the code & notes on <div>GitHub<span>&nbsp;💻</span></div></a></p>
 <p><a href="https://discord.gg/mh9rQmwJ8H" target="_blank" rel="noopener noreferrer">Ask Questions & Share Solutions in <div>Discord<span>&nbsp;🤖</span></div></a></p>
 <h2 id="problem-description"> Problem Description</h2>
-<p>Given two strings <span>s</span> and <span>t</span>, return <span>true</span>
-if <span>t</span> is an <span>anagram</span> of <span>s</span>, and <span>false</span> otherwise.</p>
+<p>Given an <span>integer</span> array <span>nums</span>, return <span>true</span> if any value appears <span>at least twice</span>, and return <span>false</span> if every element is distinct.</p>
 <h2 id="examples"> Examples</h2>
-<p>Ex 1) Input: <span>s</span> = &quot;anagram&quot;, <span>t</span> = &quot;nagaram&quot; <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> Output: <span>true</span></p>
-<p>Ex 2) Input: <span>s</span> = &quot;rat&quot;, <span>t</span> = &quot;car&quot; <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> Output: <span>false</span></p>
+<p>Ex 1) Input: <span>nums</span> = [1, 2, 3, 1] <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> Output: <span>true</span> since 1 appears twice.</p>
+<p>Ex 2) Input: <span>nums</span> = [1, 2, 3, 4] <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> Output: <span>false</span> since no value appears twice.</p>
+<p>Ex 3) Input: <span>nums</span> = [1, 1, 1, 3, 3, 4, 3, 2, 4, 2] <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> Output: <span>true</span> since 1, 3, and 2 appear more than once.</p>
+<p>Ex 4) Input: <span>nums</span> = [] <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> Output: <span>false</span> since there are no values.</p>
 <h2 id="constraints"> Constraints</h2>
+<p><mjx-container jax="CHTML"><mjx-math><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo space="4"><mjx-c c="2264"></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="4"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="."></mjx-c></mjx-mo><mjx-mi space="2"><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="g"></mjx-c></mjx-mi><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="h"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="2264"></mjx-c></mjx-mo><mjx-msup><mjx-mn><mjx-c c="1"></mjx-c><mjx-c c="0"></mjx-c></mjx-mn><mjx-script style="vertical-align: 0.393em"><mjx-mn size="s"><mjx-c c="5"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math></mjx-container></p>
+<p><mjx-container jax="CHTML"><mjx-math><mjx-mo><mjx-c c="2212"></mjx-c></mjx-mo><mjx-msup><mjx-mn><mjx-c c="1"></mjx-c><mjx-c c="0"></mjx-c></mjx-mn><mjx-script style="vertical-align: 0.393em"><mjx-mn size="s"><mjx-c c="9"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo><mjx-c c="2264"></mjx-c></mjx-mo><mjx-mstyle style="color: #ebeb33" space="4"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mo space="4"><mjx-c c="2264"></mjx-c></mjx-mo><mjx-msup><mjx-mn><mjx-c c="1"></mjx-c><mjx-c c="0"></mjx-c></mjx-mn><mjx-script style="vertical-align: 0.393em"><mjx-mn size="s"><mjx-c c="9"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math></mjx-container></p>
+<h2 id="thought-process"> Thought Process</h2>
 <ul>
-<li><mjx-container jax="CHTML"><mjx-math><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo space="4"><mjx-c c="2264"></mjx-c></mjx-mo><mjx-mstyle style="color: #33eb61" space="4"><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="."></mjx-c></mjx-mo><mjx-mi space="2"><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="g"></mjx-c></mjx-mi><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="h"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mstyle style="color: #33ebeb" space="2"><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi><mjx-mo><mjx-c c="."></mjx-c></mjx-mo><mjx-mi space="2"><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="g"></mjx-c></mjx-mi><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="h"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="2264"></mjx-c></mjx-mo><mjx-mn space="4"><mjx-c c="5"></mjx-c></mjx-mn><mjx-mo space="3"><mjx-c c="2217"></mjx-c></mjx-mo><mjx-msup><mjx-mn><mjx-c c="1"></mjx-c><mjx-c c="0"></mjx-c></mjx-mn><mjx-script style="vertical-align: 0.393em"><mjx-mn size="s"><mjx-c c="4"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math></mjx-container></li>
-<li><span>s</span> and <span>t</span> consist of lowercase English letters</li>
+<li>
+<p>By looking at the examples, the 1<sup>st</sup> thought that comes to mind may be to simply take each value in <span>nums</span>, and compare it with every other value.</p>
+<ul>
+<li>
+<p>Basically, we'll be comparing each pair of values in <span>nums</span> to see if a duplicate has occurred.</p>
+</li>
+<li>
+<p>To do this we'll start at the <span>first</span> value in <span>nums</span>, and compare it with each value to the right until we reach the end of <span>nums</span>.</p>
+</li>
+<li>
+<p>Then we'll take the <span>second</span> value in nums, and compare it with each value to the right until we reach the end of <span>nums</span>.</p>
+</li>
+<li>
+<p>We repeat this process until we reach the end of <span>nums</span> in the worst case or until we find a duplicate value.</p>
+</li>
+<li>
+<p>Here's a visualization for <span>nums</span> = [1, 2, 3] which represents a worst case scenario:</p>
+<ul>
+<li>
+<p>Let's take our 1<sup>st</sup> value in <span>nums</span>, and compare it with each value to the right of it:</p>
+<ul>
+<li><span>1<sup>st</sup> Comparison:</span></li>
 </ul>
-<h2 id="what-is-an-anagram"> What is an Anagram?</h2>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="["></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.184em; padding-left: 0.073em"><mjx-mstyle size="s" style="color: #33eb61"><mjx-mn><mjx-c c="0"></mjx-c></mjx-mn></mjx-mstyle></mjx-over><mjx-base><mjx-mstyle style="color: #33eb61"><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn></mjx-mstyle></mjx-base></mjx-mover><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.2em; padding-left: 0.073em"><mjx-mstyle size="s" style="color: #33ebeb"><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn></mjx-mstyle></mjx-over><mjx-base><mjx-mstyle style="color: #33ebeb"><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn></mjx-mstyle></mjx-base></mjx-mover><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.2em; padding-left: 0.073em"><mjx-mn size="s"><mjx-c c="2"></mjx-c></mjx-mn></mjx-over><mjx-base><mjx-mn><mjx-c c="3"></mjx-c></mjx-mn></mjx-base></mjx-mover><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-math></mjx-container></p></p>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #33eb61"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="0"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mo space="4"><mjx-c c="2260"></mjx-c></mjx-mo><mjx-mstyle style="color: #33ebeb" space="4"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mi><mjx-c c="N"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="d"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="p"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="c"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="f"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="d"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math></mjx-container></p></p>
 <ul>
-<li>A word or a phrase that is formed by <span>rearranging</span> the letters of a different word or phrase typically using all of the original letters exactly <span>once</span>.</li>
+<li><span>2<sup>nd</sup> Comparison:</span></li>
 </ul>
-<h2 id="assumptions"> Assumptions</h2>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="["></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.184em; padding-left: 0.073em"><mjx-mstyle size="s" style="color: #33eb61"><mjx-mn><mjx-c c="0"></mjx-c></mjx-mn></mjx-mstyle></mjx-over><mjx-base><mjx-mstyle style="color: #33eb61"><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn></mjx-mstyle></mjx-base></mjx-mover><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.2em; padding-left: 0.073em"><mjx-mn size="s"><mjx-c c="1"></mjx-c></mjx-mn></mjx-over><mjx-base><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn></mjx-base></mjx-mover><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.2em; padding-left: 0.073em"><mjx-mstyle size="s" style="color: #cc99ff"><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn></mjx-mstyle></mjx-over><mjx-base><mjx-mstyle style="color: #cc99ff"><mjx-mn><mjx-c c="3"></mjx-c></mjx-mn></mjx-mstyle></mjx-base></mjx-mover><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-math></mjx-container></p></p>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #33eb61"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="0"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mo space="4"><mjx-c c="2260"></mjx-c></mjx-mo><mjx-mstyle style="color: #cc99ff" space="4"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mi><mjx-c c="N"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="d"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="p"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="c"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="f"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="d"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math></mjx-container></p></p>
+</li>
+<li>
+<p>Now, let's take our 2<sup>nd</sup> value in <span>nums</span>, and compare it with each value to the right of it:</p>
 <ul>
-<li>To clarify the provided constraints we're also assuming <span>s</span> and <span>t</span> contain no spaces, and we're only able to use each letter <span>once</span>.</li>
+<li><span>3<sup>rd</sup> Comparison:</span></li>
 </ul>
-<h2 id="how-to-check-if-t-is-an-anagram-of-s"> How to Check if t is an Anagram of s?</h2>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="["></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.184em; padding-left: 0.073em"><mjx-mn size="s"><mjx-c c="0"></mjx-c></mjx-mn></mjx-over><mjx-base><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn></mjx-base></mjx-mover><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.2em; padding-left: 0.073em"><mjx-mstyle size="s" style="color: #33ebeb"><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn></mjx-mstyle></mjx-over><mjx-base><mjx-mstyle style="color: #33ebeb"><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn></mjx-mstyle></mjx-base></mjx-mover><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.2em; padding-left: 0.073em"><mjx-mstyle size="s" style="color: #cc99ff"><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn></mjx-mstyle></mjx-over><mjx-base><mjx-mstyle style="color: #cc99ff"><mjx-mn><mjx-c c="3"></mjx-c></mjx-mn></mjx-mstyle></mjx-base></mjx-mover><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-math></mjx-container></p></p>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #33ebeb"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mo space="4"><mjx-c c="2260"></mjx-c></mjx-mo><mjx-mstyle style="color: #cc99ff" space="4"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mi><mjx-c c="N"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="d"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="p"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="c"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="f"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="d"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math></mjx-container></p></p>
 <ul>
-<li>
-<p>Since we're assuming we can only use each letter in <span>s</span> and <span>t</span> once, then for <span>t</span> to be an anagram of <span>s</span> they must be the same length.</p>
-</li>
-<li>
-<p>We can first check that <span>s</span> and <span>t</span> are the same length, and if they aren't we can return false.</p>
-</li>
-<li>
-<p>Now, if <span>s</span> and <span>t</span> are the same length, they must also contain the same letters.</p>
-</li>
+<li>The 3<sup>rd</sup> value in <span>nums</span> is also the last value, so there's no more comparisons to be made.</li>
 </ul>
-<h3 id="how-to-check-if-s-and-t-contain-the-same-letters"> How to Check if s and t contain the same letters?</h3>
-<ul>
-<li>
-<p>We're given <span>s</span> and <span>t</span> as strings, but we care about being able to examine each character in the strings. So, what we can do is create an array of characters for <span>s</span> and <span>t</span>.</p>
-<ul>
-<li>
-<p>Ex 1) <span>s</span> = &quot;anagram&quot; <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> <span>sArray</span> = [&quot;a&quot;, &quot;n&quot;, &quot;a&quot;, &quot;g&quot;, &quot;r&quot;, &quot;a&quot;, &quot;m&quot;]<br><span>t</span> = &quot;nagaram&quot; <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> <span>tArray</span> = [&quot;n&quot;, &quot;a&quot;, &quot;g&quot;, &quot;a&quot;, &quot;r&quot;, &quot;a&quot;, &quot;m&quot;]</p>
-</li>
-<li>
-<p>Ex 2) <span>s</span> = &quot;rat&quot; <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> <span>sArray</span> = [&quot;r&quot;, &quot;a&quot;, &quot;t&quot;]<br><span>t</span> = &quot;car&quot; <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> <span>tArray</span> = [&quot;c&quot;, &quot;a&quot;, &quot;r&quot;]</p>
-</li>
-</ul>
-</li>
-<li>
-<p>We can use the <span>split()</span> method, and pass it a pattern of <span>&quot;&quot;</span>.</p>
-</li>
-<li>
-<p>This tells <span>split()</span> to split our strings into substrings where a <span>&quot;&quot;</span> pattern occurs which is between each character in our strings.</p>
-</li>
-<li>
-<p><span>split()</span> will then return an array of these substrings.</p>
-</li>
-<li>
-<p>Now, we need a way to compare the letters of <span>sArray</span> with the letters of <span>tArray</span>.</p>
-</li>
-<li>
-<p>We could take the first value of <span>sArray</span> and compare it with each value of <span>tArray</span>. Then break when the letters are the same, and keep track of which index the match occurred at. This will allow us to not use the value at the matched index again on the next comparison.</p>
-</li>
-<li>
-<p>A simplier solution though is to realize that we can sort our arrays, and if <span>t</span> is an anagram of <span>s</span>, then our arrays will have all the same letters in the same order.</p>
-<ul>
-<li>
-<p>Ex 1) <span>sArray.sort()</span> = [&quot;a&quot;, &quot;a&quot;, &quot;a&quot;, &quot;g&quot;, &quot;m&quot;, &quot;n&quot;, &quot;r&quot;]<br><span>tArray.sort()</span> = [&quot;a&quot;, &quot;a&quot;, &quot;a&quot;, &quot;g&quot;, &quot;m&quot;, &quot;n&quot;, &quot;r&quot;]</p>
-</li>
-<li>
-<p>Ex 2) <span>sArray.sort()</span> = [&quot;a&quot;, &quot;r&quot;, &quot;t&quot;]<br><span>tArray.sort()</span> = [&quot;a&quot;, &quot;c&quot;, &quot;r&quot;]</p>
 </li>
 </ul>
 </li>
 <li>
-<p>Then we can check if the letters in the arrays are equal by comparing each value at index <span>i</span> of <span>sArray</span> with each value at index <span>i</span> of <span>tArray</span>.</p>
+<p>To achieve this we'll need to loop over each value in <span>nums</span>, and for each iteration of this loop we need to compare our current value which will denote as <span>nums[i]</span> with each value to the right of it.</p>
 </li>
 <li>
-<p>To do this we can loop over the length of one of the arrays, and if the values of our arrays at index <span>i</span> are <span>not</span> equal, then we can break the loop by returning false.</p>
+<p>The process of comparing <span>nums[i]</span> with each value to the right of it means we'll need a nested for loop that loops from <span>nums[i + 1]</span> to the last value in <span>nums</span>.</p>
 </li>
 <li>
-<p>If the arrays are <span>equal</span>, then we'll loop over the entire length of our array and return true.</p>
+<p>A nested for loop <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> a time complexity of <mjx-container jax="CHTML"><mjx-math><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="O"></mjx-c></mjx-mi><mjx-mo><mjx-c c="("></mjx-c></mjx-mo><mjx-msup><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em"><mjx-mn size="s"><mjx-c c="2"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo><mjx-c c=")"></mjx-c></mjx-mo></mjx-mstyle></mjx-math></mjx-container> which is not efficient and will result in a Time Limit Exceeded error on LeetCode.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Before checking for duplicate values, we can realize that if we <span>sort nums</span> any duplicate values will be consecutive.</p>
+<ul>
+<li>
+<p>Let's visualize this with an example for <span>nums</span> = [1, 2, 3, 1]:</p>
+<ul>
+<li>
+<p>Sorting <span>nums</span> gives us:</p>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi><mjx-mo><mjx-c c="("></mjx-c></mjx-mo><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c=")"></mjx-c></mjx-mo></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="2"></mjx-c></mjx-mn><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="3"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-math></mjx-container></p></p>
+</li>
+<li>
+<p>Now, we can loop over <span>nums</span> and check for duplicates values.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Looping over <span>nums</span> has a time complexity of <span>O(n)</span>, and the sorting algorithm can have a time complexity as good as <span>O(nlogn)</span> if something like heapsort is used.</p>
+</li>
+<li>
+<p>So, the overall time complexity is <span>O(nlogn)</span> since it's the dominating factor.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Solving this problem requires the ability to efficiently search for values, and a great way to do that is to use a <span>hash table</span>.</p>
+<ul>
+<li>
+<p>A <span>hash table</span> is an object that maps keys to values.</p>
+</li>
+<li>
+<p>The search and insert opertions in a hash table have a time complexity of <span>O(1)</span>.</p>
+</li>
+<li>
+<p>Using a <span>hash table</span> will allow us to store each value in <span>nums</span> as a key, and we can map a value of let's say <span>true</span> to it if it's the first time we've seen the value.</p>
+</li>
+<li>
+<p>Now, to create our <span>hash table</span> we can loop over <span>nums</span> then check to see if the key is present.</p>
+</li>
+<li>
+<p>If the key is present, then we have found a duplicate, and we'll return true.</p>
+</li>
+<li>
+<p>If the key isn't present, then we'll store the current value of <span>nums</span> as a key in our <span>hash table</span> with a value of <span>true</span>.</p>
+</li>
+<li>
+<p>If no key appears twice, then <span>nums</span> has no duplicates, and we'll return false.</p>
+</li>
+<li>
+<p>Here's a visualization of creating our <span>hash table</span> which we'll denote as <span>obj</span> for <span>nums</span> = [1, 2, 1]:</p>
+<ul>
+<li><span>1<sup>st</sup> Iteration:</span></li>
+</ul>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #33eb61"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="0"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mn space="4"><mjx-c c="1"></mjx-c></mjx-mn></mjx-math></mjx-container></p></p>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="b"></mjx-c></mjx-mi><mjx-mi><mjx-c c="j"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="{"></mjx-c></mjx-mo><mjx-mo><mjx-c c="}"></mjx-c></mjx-mo><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle style="color: #33eb61"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="0"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="k"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math></mjx-container></p></p>
+<ul>
+<li>
+<p>So, we'll store the value of <span>nums[0]</span> as a key in our <span>hash table</span> with a value of true.</p>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="b"></mjx-c></mjx-mi><mjx-mi><mjx-c c="j"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="{"></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo space="4"><mjx-c c=":"></mjx-c></mjx-mo><mjx-mi space="4"><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mo><mjx-c c="}"></mjx-c></mjx-mo></mjx-math></mjx-container></p></p>
+</li>
+<li>
+<p><span>2<sup>nd</sup> Iteration:</span></p>
+</li>
+</ul>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #33ebeb"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mn space="4"><mjx-c c="2"></mjx-c></mjx-mn></mjx-math></mjx-container></p></p>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="b"></mjx-c></mjx-mi><mjx-mi><mjx-c c="j"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="{"></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo space="4"><mjx-c c=":"></mjx-c></mjx-mo><mjx-mi space="4"><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mo><mjx-c c="}"></mjx-c></mjx-mo><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle style="color: #33ebeb"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="k"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math></mjx-container></p></p>
+<ul>
+<li>
+<p>So, we'll store the value of <span>nums[1]</span> as a key in our <span>hash table</span> with a value of true.</p>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="b"></mjx-c></mjx-mi><mjx-mi><mjx-c c="j"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="{"></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo space="4"><mjx-c c=":"></mjx-c></mjx-mo><mjx-mi space="4"><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="2"></mjx-c></mjx-mn><mjx-mo space="4"><mjx-c c=":"></mjx-c></mjx-mo><mjx-mi space="4"><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mo><mjx-c c="}"></mjx-c></mjx-mo></mjx-math></mjx-container></p></p>
+</li>
+<li>
+<p><span>3<sup>rd</sup> Iteration:</span></p>
+</li>
+</ul>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #cc99ff"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mn space="4"><mjx-c c="1"></mjx-c></mjx-mn></mjx-math></mjx-container></p></p>
+<p><p><mjx-container jax="CHTML" display="true"><mjx-math display="true"><mjx-mstyle style="color: #ebeb33"><mjx-mi><mjx-c c="o"></mjx-c></mjx-mi><mjx-mi><mjx-c c="b"></mjx-c></mjx-mi><mjx-mi><mjx-c c="j"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="="></mjx-c></mjx-mo><mjx-mo space="4"><mjx-c c="{"></mjx-c></mjx-mo><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo space="4"><mjx-c c=":"></mjx-c></mjx-mo><mjx-mi space="4"><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mn space="2"><mjx-c c="2"></mjx-c></mjx-mn><mjx-mo space="4"><mjx-c c=":"></mjx-c></mjx-mo><mjx-mi space="4"><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mo><mjx-c c="}"></mjx-c></mjx-mo><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mstyle style="color: #cc99ff"><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="u"></mjx-c></mjx-mi><mjx-mi><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="["></mjx-c></mjx-mo><mjx-mn><mjx-c c="2"></mjx-c></mjx-mn><mjx-mo><mjx-c c="]"></mjx-c></mjx-mo></mjx-mstyle><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="i"></mjx-c></mjx-mi><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="r"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi><mjx-c c="d"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="a"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-TeXAtom><mjx-mi><mjx-c c="k"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mi><mjx-c c="y"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math></mjx-container></p></p>
+<ul>
+<li>Since the same key appeared in our <span>hash table</span>, a duplicate has been found in <span>nums</span>, so we'll return false.</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 <h2 id="implementation"> Implementation</h2>
-<code-fence lang="js" heading="Valid Anagram">
+<code-fence lang="js" heading="Contains Duplicate">
 <pre vue-slot="code">
-var isAnagram = function(s, t) {
-  if (s.length === t.length) {
-    let sArray = s.split('');
-    let tArray = t.split('');
-
-    sArray.sort();
-    tArray.sort();
-
-    for (let i = 0; i < s.length; i++) {
-      if (sArray[i] !== tArray[i]) {
-        return false;
-      }
+var containsDuplicate = function(nums) {
+  const obj = {};
+  for (let i = 0; i < nums.length; i++) {
+    if (obj[nums[i]]) {
+      return true;
     }
-
-    return true;
-
-  } else {
-    return false;
+    obj[nums[i]] = true;
   }
+
+  return false;
 };
 
-let s = 'rat';
-let t = 'car';
-
-console.log(isAnagram(s, t));
-
+nums = [1, 2, 3, 1];
+console.log(containsDuplicate(nums));
 </pre>
 </code-fence>
 ]]></content>
@@ -2211,14 +2079,14 @@ console.log(isAnagram(s, t));
     <contributor>
       <name>Umesh Toke</name>
     </contributor>
-    <published>2021-07-02T18:15:23.000Z</published>
+    <published>2021-08-06T18:24:00.000Z</published>
     <rights>Copyright by Umesh Toke</rights>
   </entry>
   <entry>
     <title type="html">Single Number</title>
     <id>https://decipherde.github.io/single-number/</id>
     <link href="https://decipherde.github.io/single-number/"/>
-    <updated>2024-02-11T07:06:35.184Z</updated>
+    <updated>2024-02-11T07:11:56.784Z</updated>
     <summary type="html">Hey fellow Code Monkeys!!! 🐵 Check out the Solution &amp; Notes for the LeetCode problem Single Number! 🍌🐒</summary>
     <content type="html"><![CDATA[<template #header><h1 id="single-number"> Single Number</h1>
 </template><h2 id="links"> Links</h2>
@@ -2356,10 +2224,142 @@ console.log(singleNumber(nums));
     <rights>Copyright by Umesh Toke</rights>
   </entry>
   <entry>
+    <title type="html">Valid Anagram</title>
+    <id>https://decipherde.github.io/valid-anagram/</id>
+    <link href="https://decipherde.github.io/valid-anagram/"/>
+    <updated>2024-02-11T07:11:56.788Z</updated>
+    <summary type="html">Hey fellow Code Monkeys!!! 🐵 Check out the Solution &amp; Notes for the LeetCode problem Valid Anagram! 🍌🐒</summary>
+    <content type="html"><![CDATA[<template #header><h1 id="valid-anagram"> Valid Anagram</h1>
+</template><h2 id="links"> Links</h2>
+<p><a href="https://leetcode.com/problems/valid-anagram/" target="_blank" rel="noopener noreferrer">Valid Anagram <div>Problem<span>&nbsp;💡</span></div></a></p>
+<p><a href="https://github.com/codemonkeysio/LeetCode" target="_blank" rel="noopener noreferrer">Get the code & notes on <div>GitHub<span>&nbsp;💻</span></div></a></p>
+<p><a href="https://discord.gg/mh9rQmwJ8H" target="_blank" rel="noopener noreferrer">Ask Questions & Share Solutions in <div>Discord<span>&nbsp;🤖</span></div></a></p>
+<h2 id="problem-description"> Problem Description</h2>
+<p>Given two strings <span>s</span> and <span>t</span>, return <span>true</span>
+if <span>t</span> is an <span>anagram</span> of <span>s</span>, and <span>false</span> otherwise.</p>
+<h2 id="examples"> Examples</h2>
+<p>Ex 1) Input: <span>s</span> = &quot;anagram&quot;, <span>t</span> = &quot;nagaram&quot; <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> Output: <span>true</span></p>
+<p>Ex 2) Input: <span>s</span> = &quot;rat&quot;, <span>t</span> = &quot;car&quot; <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> Output: <span>false</span></p>
+<h2 id="constraints"> Constraints</h2>
+<ul>
+<li><mjx-container jax="CHTML"><mjx-math><mjx-mn><mjx-c c="1"></mjx-c></mjx-mn><mjx-mo space="4"><mjx-c c="2264"></mjx-c></mjx-mo><mjx-mstyle style="color: #33eb61" space="4"><mjx-mi><mjx-c c="s"></mjx-c></mjx-mi><mjx-mo><mjx-c c="."></mjx-c></mjx-mo><mjx-mi space="2"><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="g"></mjx-c></mjx-mi><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="h"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo><mjx-c c=","></mjx-c></mjx-mo><mjx-mstyle style="color: #33ebeb" space="2"><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi><mjx-mo><mjx-c c="."></mjx-c></mjx-mo><mjx-mi space="2"><mjx-c c="l"></mjx-c></mjx-mi><mjx-mi><mjx-c c="e"></mjx-c></mjx-mi><mjx-mi><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi><mjx-c c="g"></mjx-c></mjx-mi><mjx-mi><mjx-c c="t"></mjx-c></mjx-mi><mjx-mi><mjx-c c="h"></mjx-c></mjx-mi></mjx-mstyle><mjx-mo space="4"><mjx-c c="2264"></mjx-c></mjx-mo><mjx-mn space="4"><mjx-c c="5"></mjx-c></mjx-mn><mjx-mo space="3"><mjx-c c="2217"></mjx-c></mjx-mo><mjx-msup><mjx-mn><mjx-c c="1"></mjx-c><mjx-c c="0"></mjx-c></mjx-mn><mjx-script style="vertical-align: 0.393em"><mjx-mn size="s"><mjx-c c="4"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math></mjx-container></li>
+<li><span>s</span> and <span>t</span> consist of lowercase English letters</li>
+</ul>
+<h2 id="what-is-an-anagram"> What is an Anagram?</h2>
+<ul>
+<li>A word or a phrase that is formed by <span>rearranging</span> the letters of a different word or phrase typically using all of the original letters exactly <span>once</span>.</li>
+</ul>
+<h2 id="assumptions"> Assumptions</h2>
+<ul>
+<li>To clarify the provided constraints we're also assuming <span>s</span> and <span>t</span> contain no spaces, and we're only able to use each letter <span>once</span>.</li>
+</ul>
+<h2 id="how-to-check-if-t-is-an-anagram-of-s"> How to Check if t is an Anagram of s?</h2>
+<ul>
+<li>
+<p>Since we're assuming we can only use each letter in <span>s</span> and <span>t</span> once, then for <span>t</span> to be an anagram of <span>s</span> they must be the same length.</p>
+</li>
+<li>
+<p>We can first check that <span>s</span> and <span>t</span> are the same length, and if they aren't we can return false.</p>
+</li>
+<li>
+<p>Now, if <span>s</span> and <span>t</span> are the same length, they must also contain the same letters.</p>
+</li>
+</ul>
+<h3 id="how-to-check-if-s-and-t-contain-the-same-letters"> How to Check if s and t contain the same letters?</h3>
+<ul>
+<li>
+<p>We're given <span>s</span> and <span>t</span> as strings, but we care about being able to examine each character in the strings. So, what we can do is create an array of characters for <span>s</span> and <span>t</span>.</p>
+<ul>
+<li>
+<p>Ex 1) <span>s</span> = &quot;anagram&quot; <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> <span>sArray</span> = [&quot;a&quot;, &quot;n&quot;, &quot;a&quot;, &quot;g&quot;, &quot;r&quot;, &quot;a&quot;, &quot;m&quot;]<br><span>t</span> = &quot;nagaram&quot; <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> <span>tArray</span> = [&quot;n&quot;, &quot;a&quot;, &quot;g&quot;, &quot;a&quot;, &quot;r&quot;, &quot;a&quot;, &quot;m&quot;]</p>
+</li>
+<li>
+<p>Ex 2) <span>s</span> = &quot;rat&quot; <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> <span>sArray</span> = [&quot;r&quot;, &quot;a&quot;, &quot;t&quot;]<br><span>t</span> = &quot;car&quot; <mjx-container jax="CHTML"><mjx-math><mjx-mstyle><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle><mjx-mo space="4"><mjx-c c="27F9"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mspace style="width: 0.278em"></mjx-mspace></mjx-mstyle></mjx-math></mjx-container> <span>tArray</span> = [&quot;c&quot;, &quot;a&quot;, &quot;r&quot;]</p>
+</li>
+</ul>
+</li>
+<li>
+<p>We can use the <span>split()</span> method, and pass it a pattern of <span>&quot;&quot;</span>.</p>
+</li>
+<li>
+<p>This tells <span>split()</span> to split our strings into substrings where a <span>&quot;&quot;</span> pattern occurs which is between each character in our strings.</p>
+</li>
+<li>
+<p><span>split()</span> will then return an array of these substrings.</p>
+</li>
+<li>
+<p>Now, we need a way to compare the letters of <span>sArray</span> with the letters of <span>tArray</span>.</p>
+</li>
+<li>
+<p>We could take the first value of <span>sArray</span> and compare it with each value of <span>tArray</span>. Then break when the letters are the same, and keep track of which index the match occurred at. This will allow us to not use the value at the matched index again on the next comparison.</p>
+</li>
+<li>
+<p>A simplier solution though is to realize that we can sort our arrays, and if <span>t</span> is an anagram of <span>s</span>, then our arrays will have all the same letters in the same order.</p>
+<ul>
+<li>
+<p>Ex 1) <span>sArray.sort()</span> = [&quot;a&quot;, &quot;a&quot;, &quot;a&quot;, &quot;g&quot;, &quot;m&quot;, &quot;n&quot;, &quot;r&quot;]<br><span>tArray.sort()</span> = [&quot;a&quot;, &quot;a&quot;, &quot;a&quot;, &quot;g&quot;, &quot;m&quot;, &quot;n&quot;, &quot;r&quot;]</p>
+</li>
+<li>
+<p>Ex 2) <span>sArray.sort()</span> = [&quot;a&quot;, &quot;r&quot;, &quot;t&quot;]<br><span>tArray.sort()</span> = [&quot;a&quot;, &quot;c&quot;, &quot;r&quot;]</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Then we can check if the letters in the arrays are equal by comparing each value at index <span>i</span> of <span>sArray</span> with each value at index <span>i</span> of <span>tArray</span>.</p>
+</li>
+<li>
+<p>To do this we can loop over the length of one of the arrays, and if the values of our arrays at index <span>i</span> are <span>not</span> equal, then we can break the loop by returning false.</p>
+</li>
+<li>
+<p>If the arrays are <span>equal</span>, then we'll loop over the entire length of our array and return true.</p>
+</li>
+</ul>
+<h2 id="implementation"> Implementation</h2>
+<code-fence lang="js" heading="Valid Anagram">
+<pre vue-slot="code">
+var isAnagram = function(s, t) {
+  if (s.length === t.length) {
+    let sArray = s.split('');
+    let tArray = t.split('');
+
+    sArray.sort();
+    tArray.sort();
+
+    for (let i = 0; i < s.length; i++) {
+      if (sArray[i] !== tArray[i]) {
+        return false;
+      }
+    }
+
+    return true;
+
+  } else {
+    return false;
+  }
+};
+
+let s = 'rat';
+let t = 'car';
+
+console.log(isAnagram(s, t));
+
+</pre>
+</code-fence>
+]]></content>
+    <author>
+      <name>Umesh Toke</name>
+    </author>
+    <contributor>
+      <name>Umesh Toke</name>
+    </contributor>
+    <published>2021-07-02T18:15:23.000Z</published>
+    <rights>Copyright by Umesh Toke</rights>
+  </entry>
+  <entry>
     <title type="html">Bitcoin</title>
     <id>https://decipherde.github.io/resources/bitcoin/</id>
     <link href="https://decipherde.github.io/resources/bitcoin/"/>
-    <updated>2024-02-11T07:06:35.187Z</updated>
+    <updated>2024-02-11T07:11:56.792Z</updated>
     <summary type="html">Ready to go down the Bitcoin rabbit hole? These resources include free and open source software recommendations that allow you to interact with Bitcoin in a sovereign and private way! ₿🐒</summary>
     <content type="html"><![CDATA[<template #header><h1 id="bitcoin-₿-🐒"> Bitcoin <div>₿ 🐒</div></h1>
 </template><p>Here you'll find a list of resources related to Bitcoin presented in alphabetical order. While I believe these links are to resources that will help you gain a better conceptual and practical understanding of Bitcoin, I haven't personally used and verified all of them. Be sure to do your own research and always double check the links are bringing you to the correct sites. Don't trust, verify.</p>
@@ -2524,26 +2524,10 @@ console.log(singleNumber(nums));
 ]]></content>
   </entry>
   <entry>
-    <title type="html">Free and Open Source Software (FOSS)</title>
-    <id>https://decipherde.github.io/resources/foss/</id>
-    <link href="https://decipherde.github.io/resources/foss/"/>
-    <updated>2024-02-11T07:06:35.188Z</updated>
-    <summary type="html">Ready to learn about free and open source software (FOSS)? These resources will explain what FOSS is, why it's important, and provide you with some useful applications! 💻🐒</summary>
-    <content type="html"><![CDATA[<template #header><h1 id="free-and-open-source-software-foss-💻-🐒"> Free and Open Source Software (FOSS) <div>💻 🐒</div></h1>
-</template><p>Here you'll find a list of resources related to free and open source software (FOSS) presented in alphabetical order that should help you gain a better conceptual and practical understanding of the topic.</p>
-<div>
-<h2 id="education"> Education</h2>
-<p><a href="https://dzone.com/articles/free-software-vs-open-source-vs-freeware-whats-the" target="_blank" rel="noopener noreferrer">Free Software vs Open Source vs Freeware<i>Content not supported</i></a> - Clarifies the differences between free software, open source, and freeware which are often confusingly used interchangeably</p>
-<p><a href="https://lukesmith.xyz/" target="_blank" rel="noopener noreferrer">Luke Smith<i>Content not supported</i></a> - A LandChad that emphasizes the importance of using FOSS as well as self-hosting your own websites and applications</p>
-<p><a href="https://www.gnu.org/philosophy/free-sw.html" target="_blank" rel="noopener noreferrer">What is Free Software?<i>Content not supported</i></a> - Description of the philosophy and principles behind free software from the Free Software Foundation (FSF)</p>
-</div>
-]]></content>
-  </entry>
-  <entry>
     <title type="html">Resources</title>
     <id>https://decipherde.github.io/resources/</id>
     <link href="https://decipherde.github.io/resources/"/>
-    <updated>2024-02-11T07:06:35.188Z</updated>
+    <updated>2024-02-11T07:11:56.792Z</updated>
     <summary type="html">Ready to take your Code Monkey skills to the next level? Then check out these useful resources which include free and open source software recommendations! 💻🐒</summary>
     <content type="html"><![CDATA[<template #header><h1 id="giving-credit-to-the-great-apes-🦍-🍌-🐒"> Giving Credit to the Great <div>Apes!!! 🦍 🍌 🐒</div></h1>
 </template><p>Here you'll find a list of topics I'm interested in presented in alphabetical order. The goal of providing resources for these topics is to help people learn more about programming as well as to provide people with free and open source software that also respects their privacy.</p>
@@ -2605,7 +2589,7 @@ console.log(singleNumber(nums));
     <title type="html">Notes and Other Stuff Transmitted by Relays (Nostr)</title>
     <id>https://decipherde.github.io/resources/nostr/</id>
     <link href="https://decipherde.github.io/resources/nostr/"/>
-    <updated>2024-02-11T07:06:35.189Z</updated>
+    <updated>2024-02-11T07:11:56.792Z</updated>
     <summary type="html">Ready to learn about Notes and Other Stuff Transmitted by Relays (Nostr)? These resources will explain what Nostr is, why it's important, and provide you with some useful applications! 🗒️🐒</summary>
     <content type="html"><![CDATA[<template #header><h1 id="notes-and-other-stuff-transmitted-by-relays-nostr-🗒️-🐒"> Notes and Other Stuff Transmitted by Relays (Nostr) <div>🗒️ 🐒</div></h1>
 </template><p>Here you'll find a list of resources related to Notes and Other Stuff Transmitted by Relays (Nostr) presented in alphabetical order. The way the Nostr protocol works along with the fact that it is still in early development means you may come across inappropriate material on some of the sites.</p>
@@ -2630,10 +2614,26 @@ console.log(singleNumber(nums));
 ]]></content>
   </entry>
   <entry>
+    <title type="html">Free and Open Source Software (FOSS)</title>
+    <id>https://decipherde.github.io/resources/foss/</id>
+    <link href="https://decipherde.github.io/resources/foss/"/>
+    <updated>2024-02-11T07:11:56.793Z</updated>
+    <summary type="html">Ready to learn about free and open source software (FOSS)? These resources will explain what FOSS is, why it's important, and provide you with some useful applications! 💻🐒</summary>
+    <content type="html"><![CDATA[<template #header><h1 id="free-and-open-source-software-foss-💻-🐒"> Free and Open Source Software (FOSS) <div>💻 🐒</div></h1>
+</template><p>Here you'll find a list of resources related to free and open source software (FOSS) presented in alphabetical order that should help you gain a better conceptual and practical understanding of the topic.</p>
+<div>
+<h2 id="education"> Education</h2>
+<p><a href="https://dzone.com/articles/free-software-vs-open-source-vs-freeware-whats-the" target="_blank" rel="noopener noreferrer">Free Software vs Open Source vs Freeware<i>Content not supported</i></a> - Clarifies the differences between free software, open source, and freeware which are often confusingly used interchangeably</p>
+<p><a href="https://lukesmith.xyz/" target="_blank" rel="noopener noreferrer">Luke Smith<i>Content not supported</i></a> - A LandChad that emphasizes the importance of using FOSS as well as self-hosting your own websites and applications</p>
+<p><a href="https://www.gnu.org/philosophy/free-sw.html" target="_blank" rel="noopener noreferrer">What is Free Software?<i>Content not supported</i></a> - Description of the philosophy and principles behind free software from the Free Software Foundation (FSF)</p>
+</div>
+]]></content>
+  </entry>
+  <entry>
     <title type="html">Privacy</title>
     <id>https://decipherde.github.io/resources/privacy/</id>
     <link href="https://decipherde.github.io/resources/privacy/"/>
-    <updated>2024-02-11T07:06:35.191Z</updated>
+    <updated>2024-02-11T07:11:56.795Z</updated>
     <summary type="html">Ready to learn how to counter global mass surveillance? These resources will explain what privacy is, why it's important, and provide you with some useful tools! 🔒🐒</summary>
     <content type="html"><![CDATA[<template #header><h1 id="privacy-🔒-🐒"> Privacy <div>🔒 🐒</div></h1>
 </template><p>Here you'll find a list of resources related to privacy presented in alphabetical order. While I believe these links are to resources that will help you gain better privacy, I haven't personally used and verified all of them. Also, using these recommended resources doesn't guarantee that you'll achieve perfect privacy. Be sure to do your own research and always double check the links are bringing you to the correct sites. Don't trust, verify.</p>
@@ -2788,7 +2788,7 @@ console.log(singleNumber(nums));
     <title type="html">Web Development</title>
     <id>https://decipherde.github.io/resources/webdev/</id>
     <link href="https://decipherde.github.io/resources/webdev/"/>
-    <updated>2024-02-11T07:06:35.192Z</updated>
+    <updated>2024-02-11T07:11:56.796Z</updated>
     <summary type="html">Ready to learn about web development? These resources will explain what web development is, why it's important, and provide you with some useful tools for learning! 🕸️🐒</summary>
     <content type="html"><![CDATA[<template #header><h1 id="web-development-🕸️-🐒"> Web Development <div>🕸️ 🐒</div></h1>
 </template><p>Here you'll find a list of resources related to web development presented in alphabetical order that should help you gain a better conceptual and practical understanding of the topic.</p>
