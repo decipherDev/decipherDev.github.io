@@ -5,16 +5,8 @@ export default {
       descriptionEmoji: 'Solutions 🏫'
     },
     Java: {
-      description: 'Java Programming',
-      descriptionEmoji: 'Enjoy!!! 🍌🐒'
-    },
-    'Raspberry-Pi': {
-      description: 'Raspberry Pi Tutorials',
-      descriptionEmoji: 'Enjoy!!! 🍌🐒'
-    },
-    VuePress: {
-      description: 'VuePress Tutorials',
-      descriptionEmoji: 'Enjoy!!! 🍌🐒'
+      description: 'Java ',
+      descriptionEmoji: 'Programming!!! 🏫'
     }
   }
 }

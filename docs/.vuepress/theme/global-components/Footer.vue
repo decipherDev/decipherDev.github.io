@@ -24,7 +24,7 @@
       </div>
     </div>
     <p class="made-by">
-      Copyright © 2024 rwxcode
+      Copyright © 2024 decipherDev
     </p>
   </footer>
 </template>

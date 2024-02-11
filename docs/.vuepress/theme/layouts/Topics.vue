@@ -2,7 +2,7 @@
   <Layout>
     <template #page-top>
       <div class="theme-default-content content__default">
-        <h1>👋 Hey Start Monkeying Around!!!</h1>
+        <h1></h1><!-- 👋 In case you want to add any heading, it will come here -->
         <div
           class="topic-card"
           @click="handleNavigation(topic)"

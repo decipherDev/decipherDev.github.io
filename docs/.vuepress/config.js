@@ -118,35 +118,35 @@ module.exports = {
         content: 'website'
       }
     ],
-    [
-      'meta',
-      {
-        property: 'og:image',
-        content:
-          'https://codemonkeys.tech/images/code-monkeys-logos/code-monkeys-blog-open-graph.png'
-      }
-    ],
-    [
-      'meta',
-      {
-        property: 'og:image:width',
-        content: '1200'
-      }
-    ],
-    [
-      'meta',
-      {
-        property: 'og:image:height',
-        content: '630'
-      }
-    ],
-    [
-      'meta',
-      {
-        property: 'og:image:alt',
-        content: 'Decipher Dev Blog Open Graph Image'
-      }
-    ],
+    // [
+    //   'meta',
+    //   {
+    //     property: 'og:image',
+    //     content:
+    //       'https://codemonkeys.tech/images/code-monkeys-logos/code-monkeys-blog-open-graph.png'
+    //   }
+    // ],
+    // [
+    //   'meta',
+    //   {
+    //     property: 'og:image:width',
+    //     content: '1200'
+    //   }
+    // ],
+    // [
+    //   'meta',
+    //   {
+    //     property: 'og:image:height',
+    //     content: '630'
+    //   }
+    // ],
+    // [
+    //   'meta',
+    //   {
+    //     property: 'og:image:alt',
+    //     content: 'Decipher Dev Blog Open Graph Image'
+    //   }
+    // ],
     [
       'meta',
       {
@@ -195,7 +195,7 @@ module.exports = {
       "Here's all of the posts we've made so far! 📝",
     topicsDescription:
       "Here you can view the various topics we've covered so far! Find a topic that interests you and start learning and coding today! Be sure to grab a banana! 🍌",
-    logo: '/images/code-monkeys-logos/code-monkeys-head-and-shoulders-logo-200w.png',
+    // logo: '/images/code-monkeys-logos/code-monkeys-head-and-shoulders-logo-200w.png',
     nav: [
       { text: 'Home', link: "/posts/" },
       { text: 'Java-Programming', link: '/topics/Java/' },
